@@ -7,9 +7,9 @@
  *  of patent rights can be found in the PATENTS file in the same directory.
  *
  */
-package bolts.utils;
+package com.anchorfree.bolts.utils;
 
 import android.app.Activity;
 
-public class BoltsActivity2 extends Activity {
+public class BoltsActivity extends Activity {
 }

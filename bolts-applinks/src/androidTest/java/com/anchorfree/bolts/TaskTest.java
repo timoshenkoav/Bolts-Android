@@ -1,4 +1,4 @@
-package bolts;
+package com.anchorfree.bolts;
 
 import android.os.Looper;
 import android.test.InstrumentationTestCase;
