@@ -8,7 +8,7 @@
  *
  */
 
-package bolts;
+package com.anchorfree.bolts;
 
 import android.content.ComponentName;
 import android.content.Context;
@@ -49,7 +49,7 @@ public class MeasurementEvent {
   // Events
   /**
    * The name for event of navigating out to other apps. Event raised in navigation methods, e.g.
-   * {@link bolts.AppLinkNavigation#navigateInBackground(Context, String)}
+   * {@link AppLinkNavigation#navigateInBackground(Context, String)}
    **/
   public static final String APP_LINK_NAVIGATE_OUT_EVENT_NAME = "al_nav_out";
 

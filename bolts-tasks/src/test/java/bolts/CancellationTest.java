@@ -9,6 +9,10 @@
  */
 package bolts;
 
+import com.anchorfree.bolts.CancellationToken;
+import com.anchorfree.bolts.CancellationTokenRegistration;
+import com.anchorfree.bolts.CancellationTokenSource;
+import com.anchorfree.bolts.Capture;
 import org.junit.Test;
 
 import java.util.concurrent.CancellationException;

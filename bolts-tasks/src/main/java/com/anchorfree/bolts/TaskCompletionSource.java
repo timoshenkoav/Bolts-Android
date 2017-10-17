@@ -1,4 +1,4 @@
-package bolts;
+package com.anchorfree.bolts;
 
 /**
  * Allows safe orchestration of a task's completion, preventing the consumer from prematurely

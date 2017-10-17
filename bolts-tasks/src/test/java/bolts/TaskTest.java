@@ -9,6 +9,15 @@
  */
 package bolts;
 
+import com.anchorfree.bolts.AggregateException;
+import com.anchorfree.bolts.CancellationToken;
+import com.anchorfree.bolts.CancellationTokenSource;
+import com.anchorfree.bolts.Capture;
+import com.anchorfree.bolts.Continuation;
+import com.anchorfree.bolts.ExecutorException;
+import com.anchorfree.bolts.Task;
+import com.anchorfree.bolts.TaskCompletionSource;
+import com.anchorfree.bolts.UnobservedTaskException;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;

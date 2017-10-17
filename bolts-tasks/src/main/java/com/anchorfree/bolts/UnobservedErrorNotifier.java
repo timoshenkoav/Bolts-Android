@@ -1,4 +1,4 @@
-package bolts;
+package com.anchorfree.bolts;
 
 /**
  * This class is used to retain a faulted task until either its error is observed or it is

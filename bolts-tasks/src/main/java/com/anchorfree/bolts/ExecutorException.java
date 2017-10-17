@@ -1,4 +1,4 @@
-package bolts;
+package com.anchorfree.bolts;
 
 /**
  * This is a wrapper class for emphasizing that task failed due to bad {@code Executor}, rather than

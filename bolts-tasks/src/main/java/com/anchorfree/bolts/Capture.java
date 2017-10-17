@@ -7,7 +7,7 @@
  *  of patent rights can be found in the PATENTS file in the same directory.
  *
  */
-package bolts;
+package com.anchorfree.bolts;
 
 /**
  * Provides a class that can be used for capturing variables in an anonymous class implementation.

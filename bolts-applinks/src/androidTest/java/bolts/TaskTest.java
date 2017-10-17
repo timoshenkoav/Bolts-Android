@@ -3,6 +3,8 @@ package bolts;
 import android.os.Looper;
 import android.test.InstrumentationTestCase;
 
+import com.anchorfree.bolts.Continuation;
+import com.anchorfree.bolts.Task;
 import java.util.concurrent.Callable;
 import java.util.concurrent.CancellationException;
 

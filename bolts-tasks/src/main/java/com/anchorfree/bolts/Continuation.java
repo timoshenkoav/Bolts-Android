@@ -7,7 +7,7 @@
  *  of patent rights can be found in the PATENTS file in the same directory.
  *
  */
-package bolts;
+package com.anchorfree.bolts;
 
 /**
  * A function to be called after a task completes.

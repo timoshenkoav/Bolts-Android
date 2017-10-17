@@ -19,6 +19,12 @@ import android.os.Bundle;
 import android.support.v4.content.LocalBroadcastManager;
 import android.test.InstrumentationTestCase;
 
+import com.anchorfree.bolts.AppLink;
+import com.anchorfree.bolts.AppLinkNavigation;
+import com.anchorfree.bolts.AppLinks;
+import com.anchorfree.bolts.MeasurementEvent;
+import com.anchorfree.bolts.Task;
+import com.anchorfree.bolts.WebViewAppLinkResolver;
 import org.json.JSONArray;
 import org.json.JSONObject;
 

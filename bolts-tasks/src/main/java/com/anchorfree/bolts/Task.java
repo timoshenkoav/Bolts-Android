@@ -7,7 +7,7 @@
  *  of patent rights can be found in the PATENTS file in the same directory.
  *
  */
-package bolts;
+package com.anchorfree.bolts;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -113,7 +113,7 @@ public class Task<TResult> {
   }
 
   /**
-   * @deprecated Please use {@link bolts.TaskCompletionSource()} instead.
+   * @deprecated Please use {@link com.anchorfree.bolts.TaskCompletionSource ()} instead.
    */
   public static <TResult> Task<TResult>.TaskCompletionSource create() {
     Task<TResult> task = new Task<>();
@@ -209,7 +209,7 @@ public class Task<TResult> {
     if (value instanceof Boolean) {
       return (Task<TResult>) ((Boolean) value ? TASK_TRUE : TASK_FALSE);
     }
-    bolts.TaskCompletionSource<TResult> tcs = new bolts.TaskCompletionSource<>();
+    com.anchorfree.bolts.TaskCompletionSource<TResult> tcs = new com.anchorfree.bolts.TaskCompletionSource<>();
     tcs.setResult(value);
     return tcs.getTask();
   }
@@ -218,7 +218,7 @@ public class Task<TResult> {
    * Creates a faulted task with the given error.
    */
   public static <TResult> Task<TResult> forError(Exception error) {
-    bolts.TaskCompletionSource<TResult> tcs = new bolts.TaskCompletionSource<>();
+    com.anchorfree.bolts.TaskCompletionSource<TResult> tcs = new com.anchorfree.bolts.TaskCompletionSource<>();
     tcs.setError(error);
     return tcs.getTask();
   }
@@ -262,7 +262,7 @@ public class Task<TResult> {
       return Task.forResult(null);
     }
 
-    final bolts.TaskCompletionSource<Void> tcs = new bolts.TaskCompletionSource<>();
+    final com.anchorfree.bolts.TaskCompletionSource<Void> tcs = new com.anchorfree.bolts.TaskCompletionSource<>();
     final ScheduledFuture<?> scheduled = executor.schedule(new Runnable() {
       @Override
       public void run() {
@@ -343,7 +343,7 @@ public class Task<TResult> {
    */
   public static <TResult> Task<TResult> call(final Callable<TResult> callable, Executor executor,
       final CancellationToken ct) {
-    final bolts.TaskCompletionSource<TResult> tcs = new bolts.TaskCompletionSource<>();
+    final com.anchorfree.bolts.TaskCompletionSource<TResult> tcs = new com.anchorfree.bolts.TaskCompletionSource<>();
     try {
       executor.execute(new Runnable() {
         @Override
@@ -403,7 +403,7 @@ public class Task<TResult> {
       return Task.forResult(null);
     }
 
-    final bolts.TaskCompletionSource<Task<TResult>> firstCompleted = new bolts.TaskCompletionSource<>();
+    final com.anchorfree.bolts.TaskCompletionSource<Task<TResult>> firstCompleted = new com.anchorfree.bolts.TaskCompletionSource<>();
     final AtomicBoolean isAnyTaskComplete = new AtomicBoolean(false);
 
     for (Task<TResult> task : tasks) {
@@ -440,7 +440,7 @@ public class Task<TResult> {
       return Task.forResult(null);
     }
       
-    final bolts.TaskCompletionSource<Task<?>> firstCompleted = new bolts.TaskCompletionSource<>();
+    final com.anchorfree.bolts.TaskCompletionSource<Task<?>> firstCompleted = new com.anchorfree.bolts.TaskCompletionSource<>();
     final AtomicBoolean isAnyTaskComplete = new AtomicBoolean(false);
       
     for (Task<?> task : tasks) {
@@ -526,7 +526,7 @@ public class Task<TResult> {
       return Task.forResult(null);
     }
 
-    final bolts.TaskCompletionSource<Void> allFinished = new bolts.TaskCompletionSource<>();
+    final com.anchorfree.bolts.TaskCompletionSource<Void> allFinished = new com.anchorfree.bolts.TaskCompletionSource<>();
     final ArrayList<Exception> causes = new ArrayList<>();
     final Object errorLock = new Object();
     final AtomicInteger count = new AtomicInteger(tasks.size());
@@ -644,7 +644,7 @@ public class Task<TResult> {
       final Continuation<TResult, TContinuationResult> continuation, final Executor executor,
       final CancellationToken ct) {
     boolean completed;
-    final bolts.TaskCompletionSource<TContinuationResult> tcs = new bolts.TaskCompletionSource<>();
+    final com.anchorfree.bolts.TaskCompletionSource<TContinuationResult> tcs = new com.anchorfree.bolts.TaskCompletionSource<>();
     synchronized (lock) {
       completed = this.isCompleted();
       if (!completed) {
@@ -698,7 +698,7 @@ public class Task<TResult> {
       final Continuation<TResult, Task<TContinuationResult>> continuation, final Executor executor,
       final CancellationToken ct) {
     boolean completed;
-    final bolts.TaskCompletionSource<TContinuationResult> tcs = new bolts.TaskCompletionSource<>();
+    final com.anchorfree.bolts.TaskCompletionSource<TContinuationResult> tcs = new com.anchorfree.bolts.TaskCompletionSource<>();
     synchronized (lock) {
       completed = this.isCompleted();
       if (!completed) {
@@ -856,7 +856,7 @@ public class Task<TResult> {
    *          scheduled on a different thread).
    */
   private static <TContinuationResult, TResult> void completeImmediately(
-      final bolts.TaskCompletionSource<TContinuationResult> tcs,
+      final com.anchorfree.bolts.TaskCompletionSource<TContinuationResult> tcs,
       final Continuation<TResult, TContinuationResult> continuation, final Task<TResult> task,
       Executor executor, final CancellationToken ct) {
     try {
@@ -900,7 +900,7 @@ public class Task<TResult> {
    *          scheduled on a different thread).
    */
   private static <TContinuationResult, TResult> void completeAfterTask(
-      final bolts.TaskCompletionSource<TContinuationResult> tcs,
+      final com.anchorfree.bolts.TaskCompletionSource<TContinuationResult> tcs,
       final Continuation<TResult, Task<TContinuationResult>> continuation,
       final Task<TResult> task, final Executor executor,
       final CancellationToken ct) {
@@ -1016,9 +1016,9 @@ public class Task<TResult> {
   }
 
   /**
-   * @deprecated Please use {@link bolts.TaskCompletionSource} instead.
+   * @deprecated Please use {@link com.anchorfree.bolts.TaskCompletionSource} instead.
    */
-  public class TaskCompletionSource extends bolts.TaskCompletionSource<TResult> {
+  public class TaskCompletionSource extends com.anchorfree.bolts.TaskCompletionSource<TResult> {
 
     /* package */ TaskCompletionSource() {
     }

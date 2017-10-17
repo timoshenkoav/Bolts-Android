@@ -1,4 +1,4 @@
-package bolts;
+package com.anchorfree.bolts;
 
 /**
  * Used to signify that a Task's error went unobserved.
